@@ -1,8 +1,8 @@
-architectures, and operating systems, including Linux, Windows, macOS, Android, and malware
-sources. We release trained tokenizers with vocabularies of 4K, 8K, 16K, 32K, and 64K tokens,
-enabling both systematic scaling studies and practical deployment from resource-constrained edge
-devices to high-throughput datacenters.
+binaries fails catastrophically, as they are optimized for human-readable text, not arbitrary byte
+distributions. Processing binaries as raw byte sequences also wastes tokens: a 100KB binary encoded
+∗Portions of this work were prepared with
 
-present a fundamentally different domain: raw byte sequences (0x00–0xFF) containing
-machine code instructions, file format headers, compressed resources, and encrypted sections with
-no linguistic regularities, word boundaries, or printable characters. Applying NLP tokenizers to
+vulnerability
+discovery in proprietary software, and program understanding or reverse engineering of stripped or
+obfuscated executables. Recent advances demonstrate that multiple hybrid or transformer-based
+architectures with scaled attention can learn rich binary representations for these tasks, but their
