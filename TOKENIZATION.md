@@ -1,8 +1,8 @@
-
-Algorithmic Foundations and Formal Semantics BPE tokenization operates by initializing with a base vocabulary (typically all unique characters in the corpus), then executing iterative merges: Count the frequencies of all adjacent symbol pairs in the current segmentation. Select the most frequent pair . Merge into a new symbol and add it to the vocabulary: . Update all occurrences of in the corpus with the new symbol. The ordered merge list defines the tokenizer (Samin, 2024, Berglund et al., 2023).
-
-With optimized data structures (e.g., max-heaps for pair frequencies, doubly-linked lists for token sequences), BPE can be realized in 8 time, making it practical for large-scale corpora (Zouhar et al., 2023). 3. Implementation, Variants, and Practical Engineering Standard Training and Encoding BPE training is fundamentally defined by iteratively counting adjacent token pairs, merging the most frequent, and appending the resulting subword to the vocabulary (Samin, 2024, Patwary et al., 7 Nov 2025).
-
-
-Source: https://arxiv.org/pdf/2410.03568
-Title: Independent Tokenization for Large Language Models ( ...
+Description: Towards Linguistically-Aware and Language- Independent Tokenization for Large Language
+Models (LLMs)
+Abstract — This paper presents a comprehensive study on the
+tokenization techniques employed by state-of-the-art large language models (LLMs) and their implications on the cost and availability of services across different languages, especially low resource languages.
+The analysis considers multiple LLMs, including GPT-4 (using cl100k_base embeddings), GPT-3 (with p50k_base embeddings), and DaVinci (employing r50k_base embeddings), as well as the widely used BERT base tokenizer.
+The study evaluates the tokenization variability observed across these models and investigates the challenges of linguistic representation in subword tokenization. The research underscores the importance of fostering linguistically-aware development
+practices, especially for languages that are traditionally under- resourced.
+Internationalization (I18N) practices in the development of AI services in this domain and beyond, with a strong emphasis on inclusivity, particularly for languages traditionally
