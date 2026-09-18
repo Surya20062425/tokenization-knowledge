@@ -1,0 +1,7 @@
+Source: https://emergentmind.com/topics/byte-pair-encoding-bpe-algorithm
+Title: Byte-Pair Encoding (BPE) Algorithm
+Description: Byte-Pair Encoding (BPE) Algorithm Updated 3 February 2026 Byte-Pair Encoding (BPE) is a frequency-driven, greedy algorithm that iteratively merges symbol pairs to form a variable-length subword vocabulary for NLP tasks. It is widely used in machine translation and language model pretraining, enabling open-vocabulary modeling and efficient text compression across various languages.
+
+Byte-Pair Encoding (BPE) is a frequency-driven, greedy algorithm originally designed as a data compression method and now established as a central subword tokenization framework in NLP. BPE iteratively merges the most frequent adjacent symbol pairs in a corpus, inducing a variable-length subword vocabulary that achieves effective compression, enables open-vocabulary modeling, and demonstrates robustness across diverse languages and scripts.
+
+, 2024): Initialization: Let be the training corpus, segmented into atomic symbols and explicit word-boundary markers as needed. The initial vocabulary comprises all distinct symbols plus any special markers. Iterative Merge Procedure (for to merges):Compute the frequency of every consecutive symbol pair in the corpus. Select the most frequent pair . Add the merged symbol to the vocabulary, . Re-encode the corpus, replacing every occurrence of with 0.
