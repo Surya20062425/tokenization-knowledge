@@ -1,8 +1,7 @@
-Motivated by these opportunities, we present a family of cross-platform BPE tokenizers for raw
-binary executables—infrastructure enabling transformer-based and more broadly sequence-model-
-based binary analysis.
 
+The Original Byte-Pair Encoding BPE was first described in 1994 by Philip Gage, not as a tokenization strategy, but as a method for compressing bytes. The goal was to optimize the byte-level storage size of text by replacing frequently recurring byte combinations with shorter representations, building a translation table in the process. The algorithm works iteratively. Starting from individual bytes, it scans the input for the most frequently occurring pair of adjacent tokens and merges them into a single new token.
 
-Source: https://philipmueller.dev/2026/03/08/tokenization-bpe-tokenizers.html
-Title: Byte-Pair Encoding Explained: The Algorithm Powering Modern LLM Tokenization
-Description: Byte-Pair Encoding Explained: The Algorithm Powering Modern LLM Tokenization How does a tokenizer actually learn which subwords to put in its vocabulary? This post covers Byte-Pair Encoding: the compression algorithm from 1994 that was repurposed for modern LLMs, how it was adapted for neural language model training, how byte-level and character-level variants differ, and why tokenizer vocabularies contain strange-looking characters like Ġ and ▁.
+This new token is added to the vocabulary, all occurrences of the pair in the text are replaced, and the process repeats. Each merge reduces the total number of tokens in the text by one unit — the two most common neighbors collapse into one.  The algorithm continues until no pair of tokens appears more than once in the text (the natural break condition of the compression use case), or until a target compression rate is reached.
+
+compression that made the original algorithm effective is exactly what makes it useful for language model tokenization: the vocabulary naturally mirrors the statistics of the training corpus. Byte-Level BPE (GPT-2) The variant introduced by Radford et al. (2019) for GPT-2 takes byte-level BPE further by starting from all 256 possible byte values as the base alphabet. Before any merges are applied, the input text is converted to its UTF-8 byte representation. This has one crucial advantage: universal coverage.
+
