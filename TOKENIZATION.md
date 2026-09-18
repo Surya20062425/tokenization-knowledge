@@ -1,8 +1,8 @@
-Parity-aware BPE explicitly optimizes a min-max objective over languages in multilingual corpora: at each merge, the target language with the lowest current compression gain is selected and merges are computed only from its corpus, trading a small decrease in overall compression (<1%) for large improvements in tokenization parity (Gini coefficient reduction from 0.064 to 0.011). Downstream model performance is unaffected, while token counts and perplexities become more equitable across languages (Foroutan et al., 6 Aug 2025).
+
+Algorithmic Foundations and Formal Semantics BPE tokenization operates by initializing with a base vocabulary (typically all unique characters in the corpus), then executing iterative merges: Count the frequencies of all adjacent symbol pairs in the current segmentation. Select the most frequent pair . Merge into a new symbol and add it to the vocabulary: . Update all occurrences of in the corpus with the new symbol. The ordered merge list defines the tokenizer (Samin, 2024, Berglund et al., 2023).
+
+With optimized data structures (e.g., max-heaps for pair frequencies, doubly-linked lists for token sequences), BPE can be realized in 8 time, making it practical for large-scale corpora (Zouhar et al., 2023). 3. Implementation, Variants, and Practical Engineering Standard Training and Encoding BPE training is fundamentally defined by iteratively counting adjacent token pairs, merging the most frequent, and appending the resulting subword to the vocabulary (Samin, 2024, Patwary et al., 7 Nov 2025).
 
 
-Source: https://emergentmind.com/topics/byte-pair-encoding-bpe-tokenizers
-Title: BPE Tokenizers: Theory and Practice
-Description: 2000 character limit reached BPE Tokenizers: Theory and Practice Updated 28 January 2026 BPE tokenizers are data-driven subword segmentation algorithms that iteratively merge frequent symbol pairs to create a fixed-size vocabulary. They maximize compression utility by reducing token lengths while robustly handling out-of-vocabulary words in diverse language contexts. Advanced implementations like BatchBPE and morphology-aware variants improve efficiency and fairness, addressing challenges in multilingual and inflected settings.
-
-Byte Pair Encoding (BPE) tokenizers are data-driven subword segmentation algorithms used as the dominant open-vocabulary preprocessing method in large-scale speech recognition, machine translation, and language modeling. BPE tokenizers iteratively merge symbol pairs in a corpus according to their frequency, constructing a fixed-size subword vocabulary and providing robust handling of out-of-vocabulary items.
+Source: https://arxiv.org/pdf/2410.03568
+Title: Independent Tokenization for Large Language Models ( ...
