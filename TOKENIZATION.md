@@ -1,7 +1,8 @@
-Source: https://emergentmind.com/topics/byte-pair-encoding-bpe-algorithm
-Title: Byte-Pair Encoding (BPE) Algorithm
-Description: Byte-Pair Encoding (BPE) Algorithm Updated 3 February 2026 Byte-Pair Encoding (BPE) is a frequency-driven, greedy algorithm that iteratively merges symbol pairs to form a variable-length subword vocabulary for NLP tasks. It is widely used in machine translation and language model pretraining, enabling open-vocabulary modeling and efficient text compression across various languages.
+BoundlessBPE: Overcomes the pre-tokenization barrier by allowing merges across pretoken (word) boundaries. This produces superwords (concatenations of entire words or substrings), yielding more uniform token frequency distributions, notably higher vocabulary utilization (up to 99%) and improved Rényi efficiency while enhancing compression by 19.7% in bytes per token (Schmidt et al., 31 Mar 2025).
 
-Byte-Pair Encoding (BPE) is a frequency-driven, greedy algorithm originally designed as a data compression method and now established as a central subword tokenization framework in NLP. BPE iteratively merges the most frequent adjacent symbol pairs in a corpus, inducing a variable-length subword vocabulary that achieves effective compression, enables open-vocabulary modeling, and demonstrates robustness across diverse languages and scripts.
 
-, 2024): Initialization: Let be the training corpus, segmented into atomic symbols and explicit word-boundary markers as needed. The initial vocabulary comprises all distinct symbols plus any special markers. Iterative Merge Procedure (for to merges):Compute the frequency of every consecutive symbol pair in the corpus. Select the most frequent pair . Add the merged symbol to the vocabulary, . Re-encode the corpus, replacing every occurrence of with 0.
+Source: https://arxiv.org/pdf/2511.17573.pdf
+Title: Binary BPE: A Family of Cross-Platform Tokenizers for Binary Analysis
+Description: To address
+this issue, we introduce the Binary BPE family, a set of cross-platform Byte Pair Encoding (BPE)
+tokenizers for executables trained on a large corpus of binaries spanning multiple platforms,
